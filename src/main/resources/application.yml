@@ -1,0 +1,7 @@
+spring:
+   application:
+      name:            dado
+server:
+   port:               2020
+   servlet:
+      context-path:    /demo
