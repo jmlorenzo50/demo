@@ -1,0 +1,21 @@
+apiVersion: apps/v1 # Usa apps/v1beta2 para versiones anteriores a 1.9.0
+kind: Deployment
+metadata:
+  name: demo-deployment 
+  labels:
+    app: demo
+spec:
+  selector:
+    matchLabels:
+      app: demo-service
+  replicas: 2 # indica al controlador que ejecute 2 pods
+  template:
+    metadata:
+      labels:
+        app: demo-service
+    spec:
+      containers:
+      - name: demo-service
+        image: jmlorenzo/demo-service:latest
+        ports:
+        - containerPort: 2020

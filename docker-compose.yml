@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  demo:
+    build: ./target/docker
+    image: demo-service
+    ports:
+      - 2020

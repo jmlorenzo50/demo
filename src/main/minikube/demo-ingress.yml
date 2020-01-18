@@ -1,0 +1,14 @@
+apiVersion:      extensions/v1beta1
+kind:            Ingress
+metadata:
+  name:          demo-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /demo
+        backend:
+          serviceName: demo-service
+          servicePort: 2020
+
+
